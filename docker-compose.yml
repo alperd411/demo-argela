@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: DockerfilePG
+    restart: always
+    ports:
+      - "5432:5432"
+    container_name: arg-postgres
+
+  demo-argela:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
+    container_name: demo-argela
+
+

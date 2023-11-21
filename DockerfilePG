@@ -1,0 +1,11 @@
+FROM postgres:latest
+
+ENV POSTGRES_DB deneme
+ENV POSTGRES_USER deneme
+ENV POSTGRES_PASSWORD deneme
+
+COPY init.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 5432
+
+
